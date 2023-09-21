@@ -183,8 +183,8 @@ namespace DuHoc.Migrations
                     b.Property<string>("user_name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("user_role")
-                        .HasColumnType("int");
+                    b.Property<string>("user_role")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("user_id");
 

@@ -9,12 +9,6 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<form asp-controller="Countries" asp-action="Index" method="get">
-    <p>
-        Title: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
 <table class="table">
     <thead>
         <tr>
@@ -40,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Continent)
             </td>
             <td>
-                <img src="~/@item.Images" width="300" height="200" />
+                    <img src="~/images/@item.Images" width="300" height="188" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

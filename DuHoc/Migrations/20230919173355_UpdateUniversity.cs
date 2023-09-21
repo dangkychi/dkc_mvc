@@ -10,6 +10,7 @@ namespace DuHoc.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+
             migrationBuilder.AddColumn<string>(
                 name: "Decription",
                 table: "University",

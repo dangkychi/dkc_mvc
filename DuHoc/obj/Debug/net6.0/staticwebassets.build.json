@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qGtAWD7agAMjxa/i9X9JiUpNmj7QuRVUepX6uuPJHqM=",
+  "Hash": "L9uchkv+HtGMrNlQaM8kauRua5pQM3vhqRP9UpuKxn4=",
   "Source": "DuHoc",
   "BasePath": "_content/DuHoc",
   "Mode": "Default",
@@ -151,6 +151,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Aus_INTERNATIONAL_COLLEGE_OF_MANAGEMENT_SYDNEY (ICMS).png"
+    },
+    {
+      "Identity": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_UNIVERSITY_OF_SYDNEY.png",
+      "SourceId": "DuHoc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\",
+      "BasePath": "_content/DuHoc",
+      "RelativePath": "images/Aus_UNIVERSITY_OF_SYDNEY.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Aus_UNIVERSITY_OF_SYDNEY.png"
+    },
+    {
+      "Identity": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\banner_1.jpeg",
+      "SourceId": "DuHoc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\",
+      "BasePath": "_content/DuHoc",
+      "RelativePath": "images/banner_1.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\banner_1.jpeg"
     },
     {
       "Identity": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_flag.png",

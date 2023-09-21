@@ -48,9 +48,15 @@ namespace DuHoc.Controllers
         // GET: Universities/Create
         public IActionResult Create()
         {
-            ViewData["Id"] = new SelectList(_context.Country, "Id", "Id");
+            // Retrieve the list of countries from your data source
+            var countries = _context.Country.ToList(); // Replace with your actual data retrieval code
+
+            // Populate ViewBag or create a view model
+            ViewBag.Countries = new SelectList(countries, "Id", "Name"); // Assuming "Id" and "Name" are the property names for ID and name in your Country model
+
             return View();
         }
+
 
         // POST: Universities/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.

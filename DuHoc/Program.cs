@@ -2,11 +2,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using DuHoc.Data;
 using DuHoc.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DuHocContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DuHocContext") ?? throw new InvalidOperationException("Connection string 'DuHocContext' not found.")));
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,6 +37,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

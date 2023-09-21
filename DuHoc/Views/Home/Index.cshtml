@@ -1,8 +1,47 @@
-﻿@{
+﻿@model IEnumerable<DuHoc.Models.Country>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <!-- Animated Banner -->
+    <div class="animated-banner">
+        <!-- Add your animated banner content here -->
+        <img src="~/images/banner_1.jpeg" alt="Banner" />
+    </div>
+
+    <form asp-controller="Countries" asp-action="Index" method="get">
+        <p>
+            Tìm kiếm: <input type="text" name="SearchString" placeholder="Nhập từ khóa, trường học, khóa học..." />
+            <input type="submit" value="Tìm kiếm" />
+        </p>
+    </form>
+
+    <!-- List of Countries -->
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="row mt-5 row-cols-lg-3 g-lg-5 g-4 row-cols-md-3 row-cols-2 justify-content-center">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="place__item wow fadeInUp" data-wow-delay="0.2s">
+                            <a href="https://gse.edu.vn/du-hoc/du-hoc-anh/" data-wpel-link="internal" target="_self" rel="follow noopener noreferrer">
+                                <div class="place__item-img c-img">
+                                    <img src="~/images/@item.Images" width="300" height="188" class="attachment-full size-full" decoding="async" />
+                                </div>
+                                <div class="place__item-text">
+                                    <h3 class="title">
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </h3>
+                                    <div class="read-more">
+                                        Khám phá ngay
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

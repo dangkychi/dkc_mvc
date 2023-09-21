@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace DuHoc.Controllers
 {
@@ -23,6 +26,48 @@ namespace DuHoc.Controllers
         public async Task<IActionResult> Index()
         {
               return View(await _context.User.ToListAsync());
+        }
+
+        // GET: Users/Logins/
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(string user_name, string password)
+        {
+            var user = _context.User.Where(u => u.user_name == user_name && u.password == password).FirstOrDefault<User>();
+
+            if (user == null || _context.User == null)
+            {
+                TempData["LoginError"] = "Invalid username or password"; // Set an error message
+                return View();
+            }
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.user_name),
+                new Claim(ClaimTypes.Role, user.user_role),
+            };
+
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity));
+
+            TempData["LoginSuccess"] = "Login successful"; // Set a success message
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return View();
         }
 
         // GET: Users/Details/5

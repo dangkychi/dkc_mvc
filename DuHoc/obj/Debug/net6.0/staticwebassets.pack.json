@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\Aus_INTERNATIONAL_COLLEGE_OF_MANAGEMENT_SYDNEY (ICMS).png"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_UNIVERSITY_OF_SYDNEY.png",
+      "PackagePath": "staticwebassets\\images\\Aus_UNIVERSITY_OF_SYDNEY.png"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_flag.png",
       "PackagePath": "staticwebassets\\images\\Aus_flag.png"
     },
@@ -75,6 +79,10 @@
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\USA_flag.png",
       "PackagePath": "staticwebassets\\images\\USA_flag.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\banner_1.jpeg",
+      "PackagePath": "staticwebassets\\images\\banner_1.jpeg"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\js\\site.js",

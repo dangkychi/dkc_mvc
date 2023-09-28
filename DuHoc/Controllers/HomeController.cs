@@ -26,12 +26,6 @@ namespace DuHoc.Controllers
             return View(countries);
         }
 
-
-        public IActionResult News()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

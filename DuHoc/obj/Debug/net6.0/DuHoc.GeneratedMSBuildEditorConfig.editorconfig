@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Country.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENvdW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Courses/Course.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Courses/Create.cshtml]
@@ -60,10 +68,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Home/News.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Logins/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -88,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1Bvc3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/NewsPosts/News.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1Bvc3RzXE5ld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Profiles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Profiles/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Profiles/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/Error.cshtml]
@@ -134,6 +146,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Universities/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0aWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Universities/University.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0aWVzXFVuaXZlcnNpdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Users/Create.cshtml]
@@ -171,3 +187,7 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-193od21f36
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_Layout_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-r9krhag398

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DuHoc.Models.University>
+
+<table class="table" >
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="~/images/@item.Images" width="300" height="188">
+            </td>
+            <td>
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(modelItem => item.Name)</li>
+                    <li class="nav-item">@Html.DisplayNameFor(model => model.TuitionFee): @Html.DisplayFor(modelItem => item.TuitionFee)</li>
+                    <li class="nav-item">@Html.DisplayNameFor(model => model.Location): @Html.DisplayFor(modelItem => item.Location)</li>
+                </ul>
+                
+            </td>        
+        </tr>
+    }
+</table>

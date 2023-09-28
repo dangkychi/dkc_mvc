@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DuHoc.Models.NewsPost>
+
+@{
+    ViewData["Title"] = "News";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimePosted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserPosted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Images)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimePosted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserPosted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Images)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

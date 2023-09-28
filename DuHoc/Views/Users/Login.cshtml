@@ -3,15 +3,6 @@
 <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
 
-@if (TempData.ContainsKey("LoginSuccess"))
-            {
-        <div class="alert alert-success">@TempData["LoginSuccess"]</div>
-            }
-            @if (TempData.ContainsKey("LoginError"))
-            {
-        <div class="alert alert-danger">@TempData["LoginError"]</div>
-            }
-
 <section class="vh-100">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -21,6 +12,14 @@
             </div>
           
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                @if (TempData.ContainsKey("LoginSuccess"))
+                {
+                    <div class="alert alert-success">@TempData["LoginSuccess"]</div>
+                }
+                @if (TempData.ContainsKey("LoginError"))
+                {
+                    <div class="alert alert-danger">@TempData["LoginError"]</div>
+                }
                 <form method="post" asp-action="Login" asp-controller="Users">
 
                     <!-- username input -->

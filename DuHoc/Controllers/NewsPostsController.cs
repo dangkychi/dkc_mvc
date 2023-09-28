@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace DuHoc.Controllers
 {
@@ -20,12 +22,20 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
               return View(await _context.NewsPost.ToListAsync());
         }
 
+        // GET: NewsPosts/News
+        public async Task<IActionResult> News()
+        {
+            return View(await _context.NewsPost.ToListAsync());
+        }
+
         // GET: NewsPosts/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.NewsPost == null)
@@ -44,6 +54,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +65,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("News_Id,Title,TimePosted,UserPosted,Content,Images")] NewsPost newsPost)
         {
             if (ModelState.IsValid)
@@ -66,6 +78,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.NewsPost == null)
@@ -86,6 +99,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("News_Id,Title,TimePosted,UserPosted,Content,Images")] NewsPost newsPost)
         {
             if (id != newsPost.News_Id)
@@ -117,6 +131,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.NewsPost == null)
@@ -137,6 +152,7 @@ namespace DuHoc.Controllers
         // POST: NewsPosts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.NewsPost == null)

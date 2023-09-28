@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace DuHoc.Controllers
 {
@@ -20,6 +22,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Countries
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index(string searchString)
         {
             var countries = from m in _context.Country
@@ -37,7 +40,14 @@ namespace DuHoc.Controllers
 
         }
 
+        // GET: Countries/Country/5
+        public IActionResult Country()
+        {
+            return View();
+        }
+
         // GET: Countries/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -56,6 +66,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Countries/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
@@ -66,6 +77,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,Continent,Images")] Country country)
         {
             if (ModelState.IsValid)
@@ -78,6 +90,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Countries/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Country == null)
@@ -98,6 +111,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Continent,Images")] Country country)
         {
             if (id != country.Id)
@@ -129,6 +143,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Countries/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Country == null)
@@ -149,6 +164,7 @@ namespace DuHoc.Controllers
         // POST: Countries/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Country == null)

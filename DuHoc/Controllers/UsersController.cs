@@ -37,19 +37,31 @@ namespace DuHoc.Controllers
         [HttpPost]
         public IActionResult Login(string user_name, string password)
         {
-            var user = _context.User.Where(u => u.user_name == user_name && u.password == password).FirstOrDefault<User>();
+            var user = _context.User.SingleOrDefault(u => u.user_name == user_name && u.password == password);
 
-            if (user == null || _context.User == null)
+            if (user == null)
             {
-                TempData["LoginError"] = "Invalid username or password"; // Set an error message
+                TempData["LoginError"] = "Invalid username or password";
                 return View();
             }
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.user_name),
-                new Claim(ClaimTypes.Role, user.user_role),
+                new Claim(ClaimTypes.Name, user.user_name)
+                // Add other claims as needed
             };
+
+            // Check user role and set claims accordingly
+            if (user.user_role == "admin")
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "admin"));
+                TempData["LoginSuccess"] = "Admin login successful";
+            }
+            else
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "user"));
+                TempData["LoginSuccess"] = "User login successful";
+            }
 
             var claimsIdentity = new ClaimsIdentity(
                 claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -58,17 +70,23 @@ namespace DuHoc.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
 
-            TempData["LoginSuccess"] = "Login successful"; // Set a success message
-
-            return RedirectToAction("Index", "Home");
+            // Redirect based on role
+            if (user.user_role == "admin")
+            {
+                return RedirectToAction("Index", "Home"); // Replace with your admin controller/action
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home"); // Replace with your user controller/action
+            }
         }
-
 
         public IActionResult Logout()
         {
-            HttpContext.SignOutAsync();
-            return View();
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login"); // Redirect to the login page
         }
+
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)

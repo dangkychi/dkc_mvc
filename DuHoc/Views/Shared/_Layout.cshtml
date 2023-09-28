@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DuHoc.styles.css" asp-append-version="true" />
-
 </head>
 <body>
     <header>
@@ -24,23 +23,41 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Countries" asp-action="Index">Country</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Universities" asp-action="University">University</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Universities" asp-action="Index">University</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Course">Course</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Profiles" asp-action="Index">Profile</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="NewsPosts" asp-action="News">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="News">News</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Consultations" asp-action="Consultation">Consultation</a>
                         </li>
                     </ul>
                     <div class="ml-auto">
                         <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item float-end">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                            @if(User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                            {
+                                <li class="nav-item float-end">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Admin Client</a>
                             </li>
+                            }                           
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    <span class="nav-link text-dark">Welcome, @User.Identity.Name</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Users" asp-action="Logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>

@@ -26,6 +26,12 @@ namespace DuHoc.Controllers
             return View(await duHocContext.ToListAsync());
         }
 
+        // GET: Profiles/Profile
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
         // GET: Profiles/Details/5
         public async Task<IActionResult> Details(int? id)
         {

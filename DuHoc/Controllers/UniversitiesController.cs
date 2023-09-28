@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DuHoc.Controllers
 {
@@ -20,13 +21,22 @@ namespace DuHoc.Controllers
         }
 
         // GET: Universities
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
             var duHocContext = _context.University.Include(u => u.Country);
             return View(await duHocContext.ToListAsync());
         }
 
+        // GET: Universities/University
+        public async Task<IActionResult> University()
+        {
+            var duHocContext = _context.University.Include(u => u.Country);
+            return View(await duHocContext.ToListAsync());
+        }
+
         // GET: Universities/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.University == null)
@@ -46,13 +56,14 @@ namespace DuHoc.Controllers
         }
 
         // GET: Universities/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             // Retrieve the list of countries from your data source
             var countries = _context.Country.ToList(); // Replace with your actual data retrieval code
 
             // Populate ViewBag or create a view model
-            ViewBag.Countries = new SelectList(countries, "Id", "Name"); // Assuming "Id" and "Name" are the property names for ID and name in your Country model
+            ViewBag.Countries = new SelectList(countries, "Id", "Name"); 
 
             return View();
         }
@@ -63,6 +74,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("University_Id,Name,Decription,TuitionFee,Location,Images,Id")] University university)
         {
             if (ModelState.IsValid)
@@ -76,6 +88,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Universities/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.University == null)
@@ -97,6 +110,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("University_Id,Name,Decription,TuitionFee,Location,Images,Id")] University university)
         {
             if (id != university.University_Id)
@@ -129,6 +143,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Universities/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.University == null)
@@ -148,6 +163,7 @@ namespace DuHoc.Controllers
         }
 
         // POST: Universities/Delete/5
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

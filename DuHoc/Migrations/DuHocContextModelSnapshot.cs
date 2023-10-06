@@ -22,6 +22,40 @@ namespace DuHoc.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DuHoc.Models.Appointment", b =>
+                {
+                    b.Property<int>("Appointment_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Appointment_Id"));
+
+                    b.Property<DateTime>("Appointment_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Create_At")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Decription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Appointment_Id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("Appointment");
+                });
+
             modelBuilder.Entity("DuHoc.Models.Country", b =>
                 {
                     b.Property<int>("Id")
@@ -36,10 +70,15 @@ namespace DuHoc.Migrations
                     b.Property<string>("Images")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Introduce")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
 
                     b.ToTable("Country");
                 });
@@ -191,6 +230,17 @@ namespace DuHoc.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("DuHoc.Models.Appointment", b =>
+                {
+                    b.HasOne("DuHoc.Models.User", "User")
+                        .WithMany("Appointment")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DuHoc.Models.Course", b =>
                 {
                     b.HasOne("DuHoc.Models.University", "University")
@@ -224,11 +274,6 @@ namespace DuHoc.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("DuHoc.Models.Country", b =>
-                {
-                    b.Navigation("University");
-                });
-
             modelBuilder.Entity("DuHoc.Models.University", b =>
                 {
                     b.Navigation("Course");
@@ -236,6 +281,8 @@ namespace DuHoc.Migrations
 
             modelBuilder.Entity("DuHoc.Models.User", b =>
                 {
+                    b.Navigation("Appointment");
+
                     b.Navigation("Profile");
                 });
 #pragma warning restore 612, 618

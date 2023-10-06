@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DuHoc.Models.Appointment>
+
+    <style>
+    ul {
+        list-style: none;
+    }
+</style>
+
+@if (User.Identity.IsAuthenticated)
+{
+        <a asp-action="Create_Appointment">ĐẶT LỊCH TƯ VẤN NGAY</a>
+    @foreach (var item in Model.Where(a => a.User.user_name == User.Identity.Name))
+    {
+        <ul>
+            <li>
+                Ngày hẹn: @Html.DisplayFor(modelItem => item.Appointment_Date)
+            </li>
+            <li>
+                Chủ đề: @Html.DisplayFor(modelItem => item.Title)
+            </li>
+            <li>
+                Mô tả: @Html.DisplayFor(modelItem => item.Decription)
+            </li>
+            <li>
+                Ngày đặt: @Html.DisplayFor(modelItem => item.Create_At)
+            </li>
+            <li>
+                Trạng thái:
+                @if (item.Status == 0)
+                {
+                    <span>Confirmed</span>
+                }
+                else if (item.Status == 1)
+                {
+                    <span>Unconfirmed</span>
+                }
+                else if (item.Status == 2)
+                {
+                    <span>Successful</span>
+                }
+                else if (item.Status == 3)
+                {
+                    <span>Cancelled</span>
+                }
+            </li>
+        </ul>
+        <hr />
+    }
+}
+else
+{
+    <p>You need to log in to use this service!</p>
+}
+

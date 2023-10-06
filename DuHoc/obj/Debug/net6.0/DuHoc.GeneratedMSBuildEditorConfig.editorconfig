@@ -16,8 +16,40 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Appointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEFwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Create_Appointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZV9BcHBvaW50bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Country.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENvdW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Country_Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENvdW50cnlfRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Create.cshtml]
@@ -174,6 +206,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Users/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/_ViewImports.cshtml]

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<DuHoc.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = "_Layout_Admin";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointment_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Decription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Create_At)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>Handle</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appointment_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Decription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Create_At)
+            </td>
+                <td>
+                    @if (item.Status == 0)
+                    {
+                        <span>Confirmed</span>
+                    }
+                    else if (item.Status == 1)
+                    {
+                        <span>Unconfirmed</span>
+                    }
+                    else if (item.Status == 2)
+                    {
+                        <span>Successful</span>
+                    }
+                    else if (item.Status == 3)
+                    {
+                        <span>Cancelled</span>
+                    }
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.user_id)
+            </td>
+            <td>
+                    <button class="btn-info" onclick="updateAppointmentStatus(@item.Appointment_Id, 0)">Confirm</button>
+                    <button class="btn-success" onclick="updateAppointmentStatus(@item.Appointment_Id, 2)">Successful</button>
+                    <button class="btn-danger" onclick="updateAppointmentStatus(@item.Appointment_Id, 3)">Cancel</button>
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Appointment_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Appointment_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Appointment_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    function updateAppointmentStatus(Appointment_Id, Status) {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("UpdateStatus", "Appointments")",
+            data: {
+                Appointment_Id: Appointment_Id,
+                Status: Status
+            },
+            success: function (result) {
+                alert("Cập nhật trạng thái thành công!");
+                location.reload();
+            },
+            error: function (xhr, status, error) {
+                alert("Đã xảy ra lỗi: " + error);
+            }
+        });
+    }
+</script>
+
+

@@ -1,0 +1,57 @@
+﻿@model DuHoc.Models.User
+
+<link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                     class="img-fluid" alt="Sample image">
+            </div>
+          
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="post" asp-action="Register" asp-controller="Users">
+
+                    <!-- username input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" asp-for="user_name" class="form-control form-control-lg"
+                               placeholder="Username" />
+                        <label asp-for="user_name" class="form-label">Username</label>
+                        <span asp-validation-for="user_name" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" asp-for="password" class="form-control form-control-lg"
+                               placeholder="Password" />
+                        <label asp-for="password" class="form-label">Password</label>
+                        <span asp-validation-for="password" class="text-danger"></span>
+                    </div>
+
+                    <!-- Role_user input hidden -->
+                    @if (User.IsInRole("admin"))
+                    {
+                        <div class="form-outline mb-3">
+                            <input type="text" asp-for="user_role" value="user" class="hiding" />
+                            <span asp-validation-for="user_role" class="text-danger"></span>
+                        </div>
+                    }
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            Register
+                        </button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">
+                            Do have an account? <a  asp-controller="Users" asp-action="Login" class="link-success">Login</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

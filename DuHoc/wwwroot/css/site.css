@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.read-more:hover {
+    animation: fadeIn 3.1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,66 @@
+﻿@model DuHoc.Models.Appointment
+
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Đặt Lịch Tư Vấn Du Học</h1>
+            <form asp-action="Create_Appointment">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                @if (User.IsInRole("admin"))
+                {
+                    <div class="form-group">
+                        <input asp-for="user_id" class="form-control" type="hidden" value="3" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Status" class="form-control" type="hidden" value="1" />
+                    </div>
+                }
+
+                <div class="form-group">
+                    <label asp-for="Appointment_Date" class="control-label">Ngày Hẹn</label>
+                    <input asp-for="Appointment_Date" class="form-control" />
+                    <span asp-validation-for="Appointment_Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Tiêu Đề</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Decription" class="control-label">Mô Tả</label>
+                    <input asp-for="Decription" class="form-control" />
+                    <span asp-validation-for="Decription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Create_At" class="control-label">Ngày Tạo</label>
+                    <input asp-for="Create_At" class="form-control" />
+                    <span asp-validation-for="Create_At" class="text-danger"></span>
+                </div>
+                <p></p>
+                <div class="form-group">
+                    <input type="submit" value="Đặt Lịch" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var createAtInput = document.querySelector("#Create_At");
+        if (createAtInput) {
+            var vietnamTime = luxon.DateTime.now().setZone("Asia/Ho_Chi_Minh").toISO();
+            createAtInput.value = vietnamTime.slice(0, 19).replace("T", " ");
+        }
+    });
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

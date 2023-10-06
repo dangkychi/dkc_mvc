@@ -20,6 +20,10 @@
                 {
                     <div class="alert alert-danger">@TempData["LoginError"]</div>
                 }
+                @if (TempData.ContainsKey("RegisterSuccess"))
+                {
+                    <div class="alert alert-success">@TempData["RegisterSuccess"]</div>
+                }
                 <form method="post" asp-action="Login" asp-controller="Users">
 
                     <!-- username input -->
@@ -52,7 +56,7 @@
                             Login
                         </button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">
-                            Don't have an account? <a href="#!" class="link-danger">Register</a>
+                            Don't have an account? <a asp-controller="Users" asp-action="Register" class="link-danger">Register</a>
                         </p>
                     </div>
 

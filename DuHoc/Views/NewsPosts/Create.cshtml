@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="UserPosted" class="control-label"></label>
-                <input asp-for="UserPosted" class="form-control" />
+                <input asp-for="UserPosted" class="form-control" value="@User.Identity.Name" />
                 <span asp-validation-for="UserPosted" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Images" class="control-label"></label>
-                <input asp-for="Images" class="form-control" />
+                <input type="file" asp-for="Images" class="form-control" />
                 <span asp-validation-for="Images" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -50,6 +50,15 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var createAtInput = document.querySelector("#TimePosted");
+        if (createAtInput) {
+            createAtInput.value = new Date().toISOString().slice(0, 19).replace("T", " ");
+        }
+    });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

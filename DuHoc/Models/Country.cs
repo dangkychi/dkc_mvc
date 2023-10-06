@@ -8,6 +8,7 @@ public class Country
     public string Name { get; set; }
     public string Continent { get; set; }
     public string Images { get; set; }
+    public string Introduce { get; set; }
 
     public ICollection<University> University { get; set; }
 }

@@ -1,4 +1,20 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Khi tài liệu đã được tải hoàn toàn
+$(document).ready(function () {
+    // Cập nhật chiều cao của footer
+    function updateFooterHeight() {
+        const bodyHeight = $('body').height();
+        const windowHeight = $(window).height();
+        const footer = $('.footer');
 
-// Write your JavaScript code.
+        if (bodyHeight < windowHeight) {
+            footer.css('position', 'absolute');
+            footer.css('bottom', '0');
+        } else {
+            footer.css('position', 'relative');
+        }
+    }
+
+    // Gọi hàm cập nhật footer height sau khi tài liệu tải xong và sau mỗi lần thay đổi kích thước cửa sổ
+    updateFooterHeight();
+    $(window).resize(updateFooterHeight);
+});

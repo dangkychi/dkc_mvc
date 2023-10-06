@@ -26,7 +26,7 @@ namespace DuHoc.Models
         public string Images { get; set; }
 
         public int Id { get; set; }
-        // Navigation property to represent the related Country
+
         [ForeignKey("Id")]
         public Country Country { get; set; }
         public ICollection<Course> Course { get; set; }

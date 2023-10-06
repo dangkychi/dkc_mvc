@@ -20,6 +20,7 @@ namespace DuHoc.Data
         public DbSet<DuHoc.Models.University> University { get; set; }
         public DbSet<DuHoc.Models.Course> Course { get; set; }
         public DbSet<DuHoc.Models.NewsPost> NewsPost { get; set; }
+        public DbSet<DuHoc.Models.Appointment> Appointment { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,6 +43,9 @@ namespace DuHoc.Data
             modelBuilder.Entity<NewsPost>()
                 .HasKey(c => c.News_Id);
 
+            modelBuilder.Entity<Appointment>()
+                .HasKey(u => u.Appointment_Id);
+
             // Define the one-to-one relationship between User and Profile
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Profile)
@@ -53,16 +57,22 @@ namespace DuHoc.Data
                 .HasOne(c => c.University)
                 .WithMany(u => u.Course)
                 .HasForeignKey(c => c.University_Id)
-                .OnDelete(DeleteBehavior.Restrict); // You can change the delete behavior as needed
+                .OnDelete(DeleteBehavior.Restrict); 
 
             // Define the one-to-many relationship between Country and University
             modelBuilder.Entity<Country>()
                 .HasMany(c => c.University)
                 .WithOne(u => u.Country)
                 .HasForeignKey(u => u.Id)
-                .OnDelete(DeleteBehavior.Restrict); // You can change the delete behavior as needed
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Additional configurations and mappings...
+            // Define the one-to-many relationship between User and Appointment
+            modelBuilder.Entity<Appointment>()
+                .HasOne(u => u.User)
+                .WithMany(p => p.Appointment)
+                .HasForeignKey(p => p.user_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             base.OnModelCreating(modelBuilder);
         }

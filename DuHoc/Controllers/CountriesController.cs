@@ -65,6 +65,24 @@ namespace DuHoc.Controllers
             return View(country);
         }
 
+        // GET: Countries/Country_Details/5
+        public async Task<IActionResult> Country_Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var country = await _context.Country
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+
+            return View(country);
+        }
+
         // GET: Countries/Create
         [Authorize(Roles = "admin")]
         public IActionResult Create()
@@ -78,7 +96,7 @@ namespace DuHoc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Create([Bind("Id,Name,Continent,Images")] Country country)
+        public async Task<IActionResult> Create([Bind("Id,Name,Continent,Images,Introduce")] Country country)
         {
             if (ModelState.IsValid)
             {
@@ -112,7 +130,7 @@ namespace DuHoc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Continent,Images")] Country country)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Continent,Images,Introduce")] Country country)
         {
             if (id != country.Id)
             {

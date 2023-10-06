@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using DuHoc.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,6 +15,7 @@ namespace DuHoc.Models
         public string user_role { get; set; }
 
         public Profile Profile { get; set; }
+        public ICollection<Appointment> Appointment { get; set; }
     }
 }
 

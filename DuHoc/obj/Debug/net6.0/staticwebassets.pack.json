@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\DuHoc.bundle.scp.css"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\DuHoc.styles.css",
+      "PackagePath": "staticwebassets\\css\\DuHoc.styles.css"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
@@ -83,6 +87,18 @@
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\banner_1.jpeg",
       "PackagePath": "staticwebassets\\images\\banner_1.jpeg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\news_1.png",
+      "PackagePath": "staticwebassets\\images\\news_1.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\news_2.png",
+      "PackagePath": "staticwebassets\\images\\news_2.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\news_3.png",
+      "PackagePath": "staticwebassets\\images\\news_3.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\js\\site.js",

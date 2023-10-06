@@ -20,10 +20,8 @@ public class Course
 
     public string Scholarship { get; set; }
 
-    // Foreign key to represent the related University
     [ForeignKey("University_Id")]
     public int University_Id { get; set; }
 
-    // Navigation property to represent the related University
     public University University { get; set; }
 }

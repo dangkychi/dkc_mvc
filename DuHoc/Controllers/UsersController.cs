@@ -48,7 +48,6 @@ namespace DuHoc.Controllers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.user_name)
-                // Add other claims as needed
             };
 
             // Check user role and set claims accordingly
@@ -73,18 +72,54 @@ namespace DuHoc.Controllers
             // Redirect based on role
             if (user.user_role == "admin")
             {
-                return RedirectToAction("Index", "Home"); // Replace with your admin controller/action
+                return RedirectToAction("Index", "Home");
             }
             else
             {
-                return RedirectToAction("Index", "Home"); // Replace with your user controller/action
+                return RedirectToAction("Index", "Home");
             }
         }
+
+        // GET: Users/Register
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: Users/Register
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register([Bind("user_id,user_name,password,user_role")] User user)
+        {
+            var isAdmin = User.IsInRole("admin");
+            user.user_role = isAdmin ? "admin" : "user";
+
+            // Check user_name
+            var existingUser = await _context.User.SingleOrDefaultAsync(u => u.user_name == user.user_name);
+            if (existingUser != null)
+            {
+                // Show notification
+                ModelState.AddModelError("user_name", "Username is already taken.");
+                return View();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(user);
+                await _context.SaveChangesAsync();
+                TempData["RegisterSuccess"] = "Register successful";
+
+                return RedirectToAction("Login");
+            }
+            return View();
+        }
+
+
 
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login"); // Redirect to the login page
+            return RedirectToAction("Login");
         }
 
 

@@ -1,0 +1,133 @@
+/* Add your custom styles here */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Định dạng footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+.animated-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    color: #64CCC5;
+}
+
+.sub-title {
+    color: #64CCC5;
+}
+
+.place__item {
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+    .place__item:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+.place__item-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.place__item-text .title {
+    color: #333;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: #64CCC5;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+    .read-more:hover {
+        background-color: #3A9D9B;
+    }
+
+
+/* Định dạng tin tức */
+.news-item {
+    margin-bottom: 30px;
+}
+
+    .news-item h2 {
+        color: #333;
+        font-size: 24px;
+    }
+
+    .news-item .text-muted {
+        color: #999;
+        font-size: 14px;
+    }
+
+    .news-item p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .news-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* Định dạng danh mục tin tức */
+.card-title {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.list-unstyled a {
+    color: #64CCC5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .list-unstyled a:hover {
+        color: #3A9D9B;
+    }
+
+.read-more:hover {
+    animation: fadeIn 3.1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

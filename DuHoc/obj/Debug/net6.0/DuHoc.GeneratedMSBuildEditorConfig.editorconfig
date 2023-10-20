@@ -44,6 +44,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ChildComments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRDb21tZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ChildComments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRDb21tZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ChildComments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRDb21tZW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ChildComments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRDb21tZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ChildComments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpbGRDb21tZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Countries/Country.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyaWVzXENvdW50cnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -128,6 +148,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1Bvc3RzXE5ld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/NewsPosts/News_Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1Bvc3RzXE5ld3NfRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ParentComments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Q29tbWVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ParentComments/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Q29tbWVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ParentComments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Q29tbWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ParentComments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Q29tbWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/ParentComments/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50Q29tbWVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Profiles/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -154,6 +198,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_CommentPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21tZW50UGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_ValidationScriptsPartial.cshtml]

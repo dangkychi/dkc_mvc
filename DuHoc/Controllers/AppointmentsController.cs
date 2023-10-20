@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Data;
 using System.Security.Claims;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 
 namespace DuHoc.Controllers
 {
@@ -107,15 +109,18 @@ namespace DuHoc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create_Appointment([Bind("Appointment_Id,user_id,Appointment_Date,Title,Decription,Create_At,Status")] Appointment appointment)
+        public async Task<IActionResult> Create_Appointment([Bind("Appointment_Id,Appointment_Date,Title,Decription,Create_At,Status")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
+                appointment.user_id = 4;
+
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Appointment));
             }
-            ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id", appointment.user_id);
+
+            ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id");
             return View(appointment);
         }
 

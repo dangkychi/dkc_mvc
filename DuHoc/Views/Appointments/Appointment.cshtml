@@ -9,6 +9,8 @@
 @if (User.Identity.IsAuthenticated)
 {
         <a asp-action="Create_Appointment">ĐẶT LỊCH TƯ VẤN NGAY</a>
+
+    <h3>Lịch đã đặt</h3>
     @foreach (var item in Model.Where(a => a.User.user_name == User.Identity.Name))
     {
         <ul>
@@ -28,11 +30,11 @@
                 Trạng thái:
                 @if (item.Status == 0)
                 {
-                    <span>Confirmed</span>
+                    <span>Unconfirmed</span>
                 }
                 else if (item.Status == 1)
                 {
-                    <span>Unconfirmed</span>
+                    <span>Confirmed</span>
                 }
                 else if (item.Status == 2)
                 {

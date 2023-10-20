@@ -16,6 +16,8 @@ namespace DuHoc.Models
 
         public Profile Profile { get; set; }
         public ICollection<Appointment> Appointment { get; set; }
+        public ICollection<ParentComment> ParentComments { get; set; }
+        public ICollection<ChildComment> ChildComments { get; set; }
     }
 }
 

@@ -1,48 +1,54 @@
 ﻿@model IEnumerable<DuHoc.Models.NewsPost>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8">
-            <h1>Tin tức du học</h1>
-            @foreach (var item in Model)
-            {
-                <div class="news-item">
-                    <div class="img">
-                        <a href="#" class="scale-hover" data-wpel-link="internal" target="_self" rel="follow noopener noreferrer">
-                            <img src="~/images/@item.Images" width="300" height="188" class="img-fluid" alt="News Image" />
-                        </a>
-                    </div>
-
-                    <div class="desc-ct">
-                        <h4 class="title hover-color">
-                            <a href="#" data-wpel-link="internal" target="_self" rel="follow noopener noreferrer">
-                                @Html.DisplayFor(modelItem => item.Title)
+<div class="news-content">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Tin tức du học</h1>
+                @foreach (var item in Model)
+                {
+                    <div class="news-item">
+                        <div class="img">
+                            <a href="#" class="scale-hover" data-wpel-link="internal" target="_self" rel="follow noopener noreferrer">
+                                <img src="~/images/@item.Images" width="300" height="188" class="img-fluid" alt="News Image" />
                             </a>
-                        </h4>
-                        <div class="desc">
-                            @Html.DisplayFor(modelItem => item.Content)
                         </div>
-                        <div class="date">
-                            <span class="text-muted">@Html.DisplayFor(modelItem => item.TimePosted)</span>
+
+                        <div class="desc-ct">
+                            <h4 class="title hover-color">
+                                <a href="@Url.Action("News_Details","NewsPosts", new { id = item.News_Id })"
+                               target="_self" rel="follow noopener noreferrer">
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </a>
+                            </h4>
+                            <div class="desc">
+                                <div id="content-@item.News_Id">
+                                    @Html.Raw(item.Content.Substring(0, 200))...
+                                </div>
+                            </div>
+                            <div class="date">
+                                <span class="text-muted">@Html.DisplayFor(modelItem => item.TimePosted)</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <hr class="my-4" />
-            }
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Danh mục tin tức</h3>
-                    <ul class="list-unstyled">
-                        <!--
-                        <li><a href="#">Danh mục 1</a></li>
-                        <li><a href="#">Danh mục 2</a></li>
-                        <li><a href="#">Danh mục 3</a></li>
-                        -->
-                    </ul>
+                    <hr class="my-4" />
+                }
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Danh mục tin tức</h3>
+                        <ul class="list-unstyled">
+                            <!--
+                            <li><a href="#">Danh mục 1</a></li>
+                            <li><a href="#">Danh mục 2</a></li>
+                            <li><a href="#">Danh mục 3</a></li>
+                            -->
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

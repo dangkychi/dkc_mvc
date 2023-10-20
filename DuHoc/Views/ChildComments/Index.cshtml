@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DuHoc.Models.ChildComment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentComment_Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentComment_Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Comment_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Comment_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Comment_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

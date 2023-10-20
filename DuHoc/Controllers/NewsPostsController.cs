@@ -9,6 +9,7 @@ using DuHoc.Data;
 using DuHoc.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using System.Xml.Linq;
 
 namespace DuHoc.Controllers
 {
@@ -33,6 +34,36 @@ namespace DuHoc.Controllers
         {
             return View(await _context.NewsPost.ToListAsync());
         }
+
+        // GET: NewsPosts/Details/5
+        public async Task<IActionResult> News_Details(int? id)
+        {
+            if (id == null || _context.NewsPost == null)
+            {
+                return NotFound();
+            }
+
+            var newsPost = await _context.NewsPost
+                .FirstOrDefaultAsync(m => m.News_Id == id);
+            if (newsPost == null)
+            {
+                return NotFound();
+            }
+
+            return View(newsPost);
+        }
+
+        /*public ActionResult News_Comment()
+        {
+            var comments = "hh";
+
+            var model = new NewsPost
+            {
+                Comments = comments
+            };
+
+            return View(model);
+        }*/
 
         // GET: NewsPosts/Details/5
         [Authorize(Roles = "admin")]

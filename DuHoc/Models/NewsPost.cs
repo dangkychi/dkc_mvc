@@ -22,4 +22,6 @@ public class NewsPost
 
     public string Images { get; set; }
 
+    public ICollection<ParentComment> Comments { get; set; }
+
 }

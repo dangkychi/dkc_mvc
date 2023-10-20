@@ -44,6 +44,10 @@ namespace DuHoc.Controllers
                 TempData["LoginError"] = "Invalid username or password";
                 return View();
             }
+            else
+            {
+                TempData["LoginSuccess"] = "User login successful";
+            }
 
             var claims = new List<Claim>
             {
@@ -54,12 +58,10 @@ namespace DuHoc.Controllers
             if (user.user_role == "admin")
             {
                 claims.Add(new Claim(ClaimTypes.Role, "admin"));
-                TempData["LoginSuccess"] = "Admin login successful";
             }
             else
             {
                 claims.Add(new Claim(ClaimTypes.Role, "user"));
-                TempData["LoginSuccess"] = "User login successful";
             }
 
             var claimsIdentity = new ClaimsIdentity(

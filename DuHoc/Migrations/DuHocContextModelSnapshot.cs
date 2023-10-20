@@ -17,7 +17,7 @@ namespace DuHoc.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -56,6 +56,38 @@ namespace DuHoc.Migrations
                     b.ToTable("Appointment");
                 });
 
+            modelBuilder.Entity("DuHoc.Models.ChildComment", b =>
+                {
+                    b.Property<int>("Comment_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Comment_Id"));
+
+                    b.Property<DateTime>("Comment_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ParentComment_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ParentComment_Id1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Comment_Id");
+
+                    b.HasIndex("ParentComment_Id1");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("ChildComment");
+                });
+
             modelBuilder.Entity("DuHoc.Models.Country", b =>
                 {
                     b.Property<int>("Id")
@@ -77,8 +109,6 @@ namespace DuHoc.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
 
                     b.ToTable("Country");
                 });
@@ -144,6 +174,35 @@ namespace DuHoc.Migrations
                     b.HasKey("News_Id");
 
                     b.ToTable("NewsPost");
+                });
+
+            modelBuilder.Entity("DuHoc.Models.ParentComment", b =>
+                {
+                    b.Property<int>("ParentComment_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ParentComment_Id"));
+
+                    b.Property<DateTime>("Comment_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("NewsPostNews_Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("ParentComment_Id");
+
+                    b.HasIndex("NewsPostNews_Id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("ParentComment");
                 });
 
             modelBuilder.Entity("DuHoc.Models.Profile", b =>
@@ -241,6 +300,23 @@ namespace DuHoc.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("DuHoc.Models.ChildComment", b =>
+                {
+                    b.HasOne("DuHoc.Models.ParentComment", "ParentComment")
+                        .WithMany()
+                        .HasForeignKey("ParentComment_Id1");
+
+                    b.HasOne("DuHoc.Models.User", "User")
+                        .WithMany("ChildComments")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ParentComment");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DuHoc.Models.Course", b =>
                 {
                     b.HasOne("DuHoc.Models.University", "University")
@@ -250,6 +326,21 @@ namespace DuHoc.Migrations
                         .IsRequired();
 
                     b.Navigation("University");
+                });
+
+            modelBuilder.Entity("DuHoc.Models.ParentComment", b =>
+                {
+                    b.HasOne("DuHoc.Models.NewsPost", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("NewsPostNews_Id");
+
+                    b.HasOne("DuHoc.Models.User", "User")
+                        .WithMany("ParentComments")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DuHoc.Models.Profile", b =>
@@ -274,6 +365,16 @@ namespace DuHoc.Migrations
                     b.Navigation("Country");
                 });
 
+            modelBuilder.Entity("DuHoc.Models.Country", b =>
+                {
+                    b.Navigation("University");
+                });
+
+            modelBuilder.Entity("DuHoc.Models.NewsPost", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
             modelBuilder.Entity("DuHoc.Models.University", b =>
                 {
                     b.Navigation("Course");
@@ -282,6 +383,10 @@ namespace DuHoc.Migrations
             modelBuilder.Entity("DuHoc.Models.User", b =>
                 {
                     b.Navigation("Appointment");
+
+                    b.Navigation("ChildComments");
+
+                    b.Navigation("ParentComments");
 
                     b.Navigation("Profile");
                 });

@@ -1,4 +1,4 @@
-/* Add your custom styles here */
+
 html {
     font-size: 16px;
 }
@@ -7,17 +7,16 @@ body {
     margin-bottom: 60px;
 }
 
-/* Định dạng footer */
+.header {
+    background-color: #26abe0;
+}
+
 .footer {
     background-color: #f8f9fa;
     padding: 20px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
-}
-
-body {
-    margin-bottom: 60px;
 }
 
 
@@ -72,7 +71,7 @@ body {
     }
 
 
-/* Định dạng tin tức */
+
 .news-item {
     margin-bottom: 30px;
 }
@@ -97,7 +96,7 @@ body {
         height: auto;
     }
 
-/* Định dạng danh mục tin tức */
+
 .card-title {
     color: #333;
     font-size: 20px;

@@ -21,6 +21,9 @@ namespace DuHoc.Data
         public DbSet<DuHoc.Models.Course> Course { get; set; }
         public DbSet<DuHoc.Models.NewsPost> NewsPost { get; set; }
         public DbSet<DuHoc.Models.Appointment> Appointment { get; set; }
+        public DbSet<DuHoc.Models.ParentComment> ParentComment { get; set; }
+        public DbSet<DuHoc.Models.ChildComment> ChildComment { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -45,6 +48,12 @@ namespace DuHoc.Data
 
             modelBuilder.Entity<Appointment>()
                 .HasKey(u => u.Appointment_Id);
+
+            modelBuilder.Entity<ParentComment>()
+                .HasKey(u => u.ParentComment_Id);
+
+            modelBuilder.Entity<ChildComment>()
+                .HasKey(u => u.Comment_Id);
 
             // Define the one-to-one relationship between User and Profile
             modelBuilder.Entity<User>()
@@ -73,6 +82,19 @@ namespace DuHoc.Data
                 .HasForeignKey(p => p.user_id)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Define the one-to-many relationship between User and Appointment
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.ParentComments)
+                .WithOne(pc => pc.User)
+                .HasForeignKey(pc => pc.user_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Define the one-to-many relationship between User and Appointment
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.ChildComments)
+                .WithOne(p => p.User)
+                .HasForeignKey(p => p.user_id)
+                .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(modelBuilder);
         }

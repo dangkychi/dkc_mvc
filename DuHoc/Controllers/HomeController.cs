@@ -19,10 +19,7 @@ namespace DuHoc.Controllers
 
         public IActionResult Index()
         {
-            // Fetch the list of countries from your data source (e.g., database)
             var countries = _context.Country.ToList();
-
-            // Pass the list of countries to the view
             return View(countries);
         }
 

@@ -6,6 +6,15 @@
 @{
     Layout = "_Layout_Admin";
 }
+@functions {
+    public string RemoveHtmlTags(string html)
+    {
+        var doc = new HtmlAgilityPack.HtmlDocument();
+        doc.LoadHtml(html);
+        return System.Web.HttpUtility.HtmlDecode(doc.DocumentNode.InnerText);
+    }
+}
+
 
 <h1>Index</h1>
 
@@ -42,8 +51,11 @@
             <td>
                     <img src="~/images/@item.Images" width="300" height="188" />
             </td>
+               @{
+                    string strippedContent = RemoveHtmlTags(item.Introduce);
+                }
                 <td>
-                    @Html.DisplayFor(modelItem => item.Introduce)
+                    @Html.Raw(strippedContent.Substring(0, 200))...
                 </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

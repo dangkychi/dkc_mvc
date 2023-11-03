@@ -6,13 +6,13 @@
     <div class="row">
         <div class="col-md-8">
             <h1>Đặt Lịch Tư Vấn Du Học</h1>
-            <form asp-action="Create_Appointment">
+            <form asp-action="Appointment_Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 @if (User.IsInRole("admin"))
                 {
                     <div class="form-group">
-                        <input asp-for="user_id" class="form-control" type="hidden" value="" />
+                        <input asp-for="user_id" class="form-control" type="hidden" />
                     </div>
 
                     <div class="form-group">
@@ -56,6 +56,7 @@
         if (createAtInput) {
             var vietnamTime = luxon.DateTime.now().setZone("Asia/Ho_Chi_Minh").toISO();
             createAtInput.value = vietnamTime.slice(0, 19).replace("T", " ");
+            createAtInput.setAttribute("readonly", true);
         }
     });
 </script>

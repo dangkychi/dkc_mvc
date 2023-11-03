@@ -23,27 +23,28 @@ namespace DuHoc.Controllers
 
         // GET: Countries
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index()
         {
             var countries = from m in _context.Country
                          select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                countries = countries.Where(s =>
-                s.Name.Contains(searchString) ||   
-                s.Continent.Contains(searchString)
-        );
-            }
 
             return View(await countries.ToListAsync());
 
         }
 
         // GET: Countries/Country/5
-        public IActionResult Country()
+        public async Task<IActionResult> Country(string searchString)
         {
-            return View();
+            var countries = from m in _context.Country
+                            select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                countries = countries.Where(s =>
+                s.Name.Contains(searchString) ||
+                s.Continent.Contains(searchString));
+            }
+            return View(await countries.ToListAsync());
         }
 
         // GET: Countries/Details/5

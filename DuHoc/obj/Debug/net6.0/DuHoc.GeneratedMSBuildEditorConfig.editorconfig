@@ -20,12 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEFwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Appointment_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEFwcG9pbnRtZW50X0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Create_Appointment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZV9BcHBvaW50bWVudC5jc2h0bWw=
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Appointments/Delete.cshtml]
@@ -196,6 +196,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Profiles/Profile_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZXNcUHJvZmlsZV9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -230,6 +234,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Universities/University.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0aWVzXFVuaXZlcnNpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Universities/University_Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdmVyc2l0aWVzXFVuaXZlcnNpdHlfRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Users/Create.cshtml]

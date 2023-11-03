@@ -13,6 +13,7 @@ using System.Data;
 using System.Security.Claims;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace DuHoc.Controllers
 {
@@ -101,7 +102,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Appointments/Create_Appointment
-        public IActionResult Create_Appointment()
+        public IActionResult Appointment_Create()
         {
             ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id");
             return View();
@@ -109,11 +110,14 @@ namespace DuHoc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create_Appointment([Bind("Appointment_Id,Appointment_Date,Title,Decription,Create_At,Status")] Appointment appointment)
+        public async Task<IActionResult> Appointment_Create([Bind("Appointment_Id,Appointment_Date,Title,Decription,Create_At,Status")] Appointment appointment)
         {
+            var currentName = User.Identity.Name;
+            var user = _context.User.SingleOrDefault(u => u.user_name == currentName);
             if (ModelState.IsValid)
             {
-                appointment.user_id = 4;
+                var currentId = user.user_id;
+                appointment.user_id = currentId;
 
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();

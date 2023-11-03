@@ -8,7 +8,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-        <a asp-action="Create_Appointment">ĐẶT LỊCH TƯ VẤN NGAY</a>
+    <a asp-action="Appointment_Create">ĐẶT LỊCH TƯ VẤN NGAY</a>
 
     <h3>Lịch đã đặt</h3>
     @foreach (var item in Model.Where(a => a.User.user_name == User.Identity.Name))

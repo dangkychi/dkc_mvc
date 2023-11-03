@@ -6,7 +6,14 @@
 @{
     Layout = "_Layout_Admin";
 }
-
+@functions {
+    public string RemoveHtmlTags(string html)
+    {
+        var doc = new HtmlAgilityPack.HtmlDocument();
+        doc.LoadHtml(html);
+        return System.Web.HttpUtility.HtmlDecode(doc.DocumentNode.InnerText);
+    }
+}
 <h1>Index</h1>
 
 <p>
@@ -42,9 +49,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Decription)
-            </td>
+                @{
+                    string strippedContent = RemoveHtmlTags(item.Decription);
+                }
+                <td>
+                    @Html.Raw(strippedContent.Substring(0, 200))...
             <td>
                 @Html.DisplayFor(modelItem => item.TuitionFee)
             </td>

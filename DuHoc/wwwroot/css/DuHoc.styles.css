@@ -8,34 +8,80 @@ body {
 }
 
 .header {
-    background-color: #26abe0;
+    background-color: #222831;
 }
 
 .footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
 
+.navbar .container-fluid {
+    background-color: #222831;
+    position: relative;
+    opacity: 0.4;
+}
+
+    .navbar .container-fluid .nav-link:hover {
+        color: #3A9D9B;
+    }
+
+.footer__wrapper {
+    background-color: #111010;
+    padding-top: 10rem;
+    color: #a1a4b1;
+    position: relative;
+}
+
+    .footer__wrapper .footer-item .footer-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 3rem;
+    }
+
+    .footer__wrapper .footer-item .list-menu li {
+        margin-bottom: 2.5rem;
+        list-style: none; 
+    }
+
+        .footer__wrapper .footer-item .list-menu li a {
+            color: inherit;
+            background-color: transparent;
+            text-decoration: none;
+            transition: color 0.3s;
+            border-bottom: none;
+        }
+
+            .footer__wrapper .footer-item .list-menu li a:hover {
+                color: #3A9D9B;
+            }
+
+    .footer__wrapper .footer-item .list-information .ph-no, .footer__wrapper .footer-item .list-information .email {
+        margin-top: 5px;
+    }
+    .footer__wrapper .coppy-right {
+        text-align: center;
+        border-top: 1px solid #a1a4b1;
+        padding: 3rem 0;
+        margin-top: 3rem;
+    }
+
 .animated-banner img {
     max-width: 100%;
     height: auto;
 }
 
-.title {
-    color: #64CCC5;
-}
 
 .sub-title {
     color: #64CCC5;
 }
 
 .place__item {
+    text-decoration: none;
     margin-bottom: 30px;
-    border: 1px solid #e0e0e0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
@@ -53,7 +99,7 @@ body {
 .place__item-text .title {
     color: #333;
     font-size: 20px;
-    margin-top: 15px;
+    text-decoration: none;
 }
 
 .read-more {

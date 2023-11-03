@@ -10,12 +10,14 @@ using DuHoc.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using System.Xml.Linq;
+using DuHoc.Models.ViewModels;
 
 namespace DuHoc.Controllers
 {
     public class NewsPostsController : Controller
     {
         private readonly DuHocContext _context;
+        public int PageSize = 6;
 
         public NewsPostsController(DuHocContext context)
         {
@@ -30,9 +32,18 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts/News
-        public async Task<IActionResult> News()
-        {
-            return View(await _context.NewsPost.ToListAsync());
+        public async Task<IActionResult> News(int newsPage = 1)
+        {        
+            return View(new NewsListViewModel
+            {
+                NewsPosts = _context.NewsPost.Skip((newsPage - 1) * PageSize).Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    ItemsPerPage= PageSize,
+                    CurrentPage = newsPage,
+                    TotalItems = _context.NewsPost.Count()
+                }
+            });
         }
 
         // GET: NewsPosts/Details/5
@@ -97,16 +108,18 @@ namespace DuHoc.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "admin")]
-        public async Task<IActionResult> Create([Bind("News_Id,Title,TimePosted,UserPosted,Content,Images")] NewsPost newsPost)
+        public async Task<IActionResult> Create([Bind("News_Id,Title,UserPosted,Content,Images")] NewsPost newsPost)
         {
             if (ModelState.IsValid)
             {
+                newsPost.TimePosted = DateTime.Now;
                 _context.Add(newsPost);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(newsPost);
         }
+
 
         // GET: NewsPosts/Edit/5
         [Authorize(Roles = "admin")]

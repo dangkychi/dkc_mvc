@@ -29,10 +29,35 @@ namespace DuHoc.Controllers
         }
 
         // GET: Universities/University
-        public async Task<IActionResult> University()
+        public async Task<IActionResult> University(string searchString)
         {
-            var duHocContext = _context.University.Include(u => u.Country);
-            return View(await duHocContext.ToListAsync());
+            var universities = from m in _context.University
+                               select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                universities = universities.Where(s =>
+                s.Name.Contains(searchString) ||
+                s.Location.Contains(searchString));
+            }
+            return View(await universities.ToListAsync());
+        }
+
+        public async Task<IActionResult> University_Details(int? id)
+        {
+            if (id == null || _context.University == null)
+            {
+                return NotFound();
+            }
+
+            var university = await _context.University
+                .Include(u => u.Country)
+                .FirstOrDefaultAsync(m => m.University_Id == id);
+            if (university == null)
+            {
+                return NotFound();
+            }
+
+            return View(university);
         }
 
         // GET: Universities/Details/5
@@ -59,10 +84,7 @@ namespace DuHoc.Controllers
         [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
-            // Retrieve the list of countries from your data source
-            var countries = _context.Country.ToList(); // Replace with your actual data retrieval code
-
-            // Populate ViewBag or create a view model
+            var countries = _context.Country.ToList();
             ViewBag.Countries = new SelectList(countries, "Id", "Name"); 
 
             return View();
@@ -91,6 +113,8 @@ namespace DuHoc.Controllers
         [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
+            var countries = _context.Country.ToList();
+            ViewBag.Countries = new SelectList(countries, "Id", "Name");
             if (id == null || _context.University == null)
             {
                 return NotFound();
@@ -140,6 +164,7 @@ namespace DuHoc.Controllers
             }
             ViewData["Id"] = new SelectList(_context.Country, "Id", "Id", university.Id);
             return View(university);
+
         }
 
         // GET: Universities/Delete/5

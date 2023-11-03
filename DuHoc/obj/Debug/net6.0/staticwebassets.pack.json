@@ -29,16 +29,36 @@
       "PackagePath": "staticwebassets\\images\\Aus_INTERNATIONAL_COLLEGE_OF_MANAGEMENT_SYDNEY (ICMS).png"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_SYDNEY_METROPOLITAN_INSTITUTE_OF_TECHNOLOGY.png",
+      "PackagePath": "staticwebassets\\images\\Aus_SYDNEY_METROPOLITAN_INSTITUTE_OF_TECHNOLOGY.png"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_UNIVERSITY_OF_SYDNEY.png",
       "PackagePath": "staticwebassets\\images\\Aus_UNIVERSITY_OF_SYDNEY.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_UNIVERSITY_OF_SYDNEY_1.png",
+      "PackagePath": "staticwebassets\\images\\Aus_UNIVERSITY_OF_SYDNEY_1.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Aus_flag.png",
       "PackagePath": "staticwebassets\\images\\Aus_flag.png"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Banner-web-GSE-11.png",
+      "PackagePath": "staticwebassets\\images\\Banner-web-GSE-11.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_ALGOMA_UNIVERSITY.jpg",
+      "PackagePath": "staticwebassets\\images\\Can_ALGOMA_UNIVERSITY.jpg"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_TORONTO_METROPOLITAN_UNIVERSITY.png",
       "PackagePath": "staticwebassets\\images\\Can_TORONTO_METROPOLITAN_UNIVERSITY.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_TORONTO_METROPOLITAN_UNIVERSITY_1.png",
+      "PackagePath": "staticwebassets\\images\\Can_TORONTO_METROPOLITAN_UNIVERSITY_1.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_UNIVERSITY_CANADA_WEST.jpeg",
@@ -47,6 +67,14 @@
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Can_flag.png",
       "PackagePath": "staticwebassets\\images\\Can_flag.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\NewZ_LINCOLN_UNIVERSITY.png",
+      "PackagePath": "staticwebassets\\images\\NewZ_LINCOLN_UNIVERSITY.png"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\NewZ_MASSEY_UNIVERSITY.jpg",
+      "PackagePath": "staticwebassets\\images\\NewZ_MASSEY_UNIVERSITY.jpg"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\NewZ_UNIVERSITY_OF_WAIKATO.jpg",
@@ -61,20 +89,44 @@
       "PackagePath": "staticwebassets\\images\\NewZ_flag.png"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\Thuong-Anh-web.png",
+      "PackagePath": "staticwebassets\\images\\Thuong-Anh-web.png"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_LEEDS_TRINITY_UNIVERSITY.jpg",
       "PackagePath": "staticwebassets\\images\\UK_LEEDS_TRINITY_UNIVERSITY.jpg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_THE_UNIVERSITY_OF_LAW.jpg",
+      "PackagePath": "staticwebassets\\images\\UK_THE_UNIVERSITY_OF_LAW.jpg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_UNIVERSITY_OF_DUNDEE.png",
+      "PackagePath": "staticwebassets\\images\\UK_UNIVERSITY_OF_DUNDEE.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_UNIVERSITY_OF_PLYMOUTH.jpg",
       "PackagePath": "staticwebassets\\images\\UK_UNIVERSITY_OF_PLYMOUTH.jpg"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_UNIVERSITY_OF_PLYMOUTH_1.png",
+      "PackagePath": "staticwebassets\\images\\UK_UNIVERSITY_OF_PLYMOUTH_1.png"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\UK_flag.png",
       "PackagePath": "staticwebassets\\images\\UK_flag.png"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\USA_CALIFORNIA_LUTHERAN_UNIVERSITY.png",
+      "PackagePath": "staticwebassets\\images\\USA_CALIFORNIA_LUTHERAN_UNIVERSITY.png"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\USA_SOUTHERN_OREGON_UNIVERSITY.jpg",
       "PackagePath": "staticwebassets\\images\\USA_SOUTHERN_OREGON_UNIVERSITY.jpg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\USA_UNIVERSITY_AT_BUFFALO.png",
+      "PackagePath": "staticwebassets\\images\\USA_UNIVERSITY_AT_BUFFALO.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\USA_UNIVERSITY_OF_CONNECTICUT.png",
@@ -87,6 +139,14 @@
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\banner_1.jpeg",
       "PackagePath": "staticwebassets\\images\\banner_1.jpeg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\du-hoc-chuong-trinh-top-up-tai-anh-sieu-tiet-kiem-tu-van-du-hoc-gse-1200x628-1.jpg",
+      "PackagePath": "staticwebassets\\images\\du-hoc-chuong-trinh-top-up-tai-anh-sieu-tiet-kiem-tu-van-du-hoc-gse-1200x628-1.jpg"
+    },
+    {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\hoc-bong-du-hoc-uc-len-den-100-la-trobe-university-2024-tu-van-du-hoc-gse.png",
+      "PackagePath": "staticwebassets\\images\\hoc-bong-du-hoc-uc-len-den-100-la-trobe-university-2024-tu-van-du-hoc-gse.png"
     },
     {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\images\\news_1.png",

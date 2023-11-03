@@ -27,10 +27,17 @@ namespace DuHoc.Controllers
         }
 
         // GET: Profiles/Profile
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile(Profile profile)
         {
-            return View();
+            var currentName = User.Identity.Name;
+            var user = _context.User.SingleOrDefault(u => u.user_name == currentName);
+            var currentId = user.user_id;
+            profile.user_id = currentId;
+
+            var duHocContext = _context.Profile.Include(p => p.User);
+            return View(await duHocContext.ToListAsync());
         }
+
 
         // GET: Profiles/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -123,6 +130,57 @@ namespace DuHoc.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
+            }
+            ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id", profile.user_id);
+            return View(profile);
+        }
+
+        // GET: Profiles/Edit/5
+        public async Task<IActionResult> Profile_Edit(int? id)
+        {
+            if (id == null || _context.Profile == null)
+            {
+                return NotFound();
+            }
+
+            var profile = await _context.Profile.FindAsync(id);
+            if (profile == null)
+            {
+                return NotFound();
+            }
+            ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id", profile.user_id);
+            return View(profile);
+        }
+
+        // POST: Profiles/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Profile_Edit(int id, [Bind("user_id,full_name,birthdate,phone_number,email,address")] Profile profile)
+        {
+            if (id != profile.user_id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(profile);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProfileExists(profile.user_id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Profile));
             }
             ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id", profile.user_id);
             return View(profile);

@@ -275,3 +275,17 @@ D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\obj\Debug\net6.0\refint\DuHoc
 D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\obj\Debug\net6.0\DuHoc.pdb
 D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\obj\Debug\net6.0\DuHoc.genruntimeconfig.cache
 D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\obj\Debug\net6.0\ref\DuHoc.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\HtmlAgilityPack.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\JetBrains.Annotations.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.Mvc.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.Razor.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.Helpers.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\System.Web.WebPages.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\X.PagedList.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\X.PagedList.Mvc.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\bin\Debug\net6.0\X.PagedList.Web.Common.dll
+D:\forproject\DAPM\LyThuyet\TUVANDUHOC\DuHoc\DuHoc\obj\Debug\net6.0\DuHoc.MvcApplicationPartsAssemblyInfo.cs

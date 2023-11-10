@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
+using DuHoc.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DuHoc.Controllers
 {
@@ -68,6 +70,37 @@ namespace DuHoc.Controllers
             ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id", parentComment.user_id);
             return View(parentComment);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Post(string Text,NewsListViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var currentName = User.Identity.Name;
+                var user = _context.User.SingleOrDefault(u => u.user_name == currentName);
+
+                if (user != null)
+                {
+                    var parentComment = new ParentComment
+                    {
+                        user_id = user.user_id,
+                        Comment_Date = DateTime.Now,
+                        Text = Text
+                    };
+
+                    _context.ParentComment.Add(parentComment);
+                    await _context.SaveChangesAsync();
+
+                    return RedirectToAction("News", "NewsPosts");
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Bạn cần đăng nhập để có thể bình luận.");
+                }
+            }
+            return View();
+        }
+
 
         // GET: ParentComments/Edit/5
         public async Task<IActionResult> Edit(int? id)

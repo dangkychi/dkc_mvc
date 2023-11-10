@@ -27,7 +27,7 @@
 
                         <div class="desc-ct">
                             <h4 class="title hover-color">
-                                <a href="@Url.Action("News_Details","NewsPosts", new { id = item.News_Id })"
+                                <a style="text-decoration: none" href="@Url.Action("News_Details","NewsPosts", new { id = item.News_Id })"
                                target="_self" rel="follow noopener noreferrer">
                                     @Html.DisplayFor(modelItem => item.Title)
                                 </a>
@@ -68,7 +68,7 @@
         <div class="col-12 pb-1">
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center mb-3">
-                    <li class="page-item" @if (Model.PagingInfo.CurrentPage <= 1) {<text>disabled</text>}">
+                    <li class="page-item">
                         <a class="page-link" href="/NewsPosts/News/?newsPage=@(Model.PagingInfo.CurrentPage - 1)" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="d-none d-sm-inline">Previous</span>
@@ -80,7 +80,7 @@
                         <li class="page-item"><a class="page-link" href="/NewsPosts/News/?newsPage=@i">@i</a></li>
                     }
     
-                    <li class="page-item" @if (Model.PagingInfo.CurrentPage >= Model.PagingInfo.TotalPages) {<text>disabled</text>}">
+                    <li class="page-item">
                         <a class="page-link" href="/NewsPosts/News/?newsPage=@(Model.PagingInfo.CurrentPage + 1)" aria-label="Previous">
                             <span class="d-none d-sm-inline">Next</span>
                             <span aria-hidden="true">&raquo;</span>
@@ -91,6 +91,9 @@
             </nav>
 
         </div>
+    </div>
+    <div class="col-sm-12" id="tabs_info">
+        @**@<partial name="~/Views/Shared/_PartialComment.cshtml" />
     </div>
 </div>
 

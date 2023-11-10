@@ -82,18 +82,25 @@ namespace DuHoc.Data
                 .HasForeignKey(p => p.user_id)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Define the one-to-many relationship between User and Appointment
+            // Define the one-to-many relationship between User and ParentComment
             modelBuilder.Entity<User>()
                 .HasMany(u => u.ParentComments)
                 .WithOne(pc => pc.User)
                 .HasForeignKey(pc => pc.user_id)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Define the one-to-many relationship between User and Appointment
+            // Define the one-to-many relationship between User and ChildComment
             modelBuilder.Entity<User>()
                 .HasMany(u => u.ChildComments)
                 .WithOne(p => p.User)
                 .HasForeignKey(p => p.user_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Define the one-to-many relationship between ParentComment and ChildComment
+            modelBuilder.Entity<ParentComment>()
+                .HasMany(u => u.ChildComments)
+                .WithOne(p => p.ParentComment)
+                .HasForeignKey(p => p.ParentComment_Id)
                 .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(modelBuilder);

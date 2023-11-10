@@ -204,8 +204,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_CommentPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21tZW50UGFydGlhbC5jc2h0bWw=
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_PartialAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQXBwb2ludG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_PartialComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQ29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_PartialCountry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQ291bnRyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_PartialPostComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsUG9zdENvbW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/forproject/DAPM/LyThuyet/TUVANDUHOC/DuHoc/DuHoc/Views/Shared/_ValidationScriptsPartial.cshtml]

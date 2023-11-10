@@ -16,11 +16,14 @@
     <p></p>
     <h1>@Model.Name</h1>
     <p class="text-muted">Chi phí cơ bản: @Model.TuitionFee</p>
-    <p class="text-muted">Create by: @Model.Location</p>
-    
+    <p class="text-muted">Địa điểm: @Model.Location</p>
+        
     <div class="row">
         <div class="col-md-8">           
             <p>@Html.Raw(Model.Decription)</p>
+        </div>
+        <div class="col-md-4">
+            <partial name="~/Views/Shared/_PartialCountry.cshtml" />
         </div>
     </div>
 </div>

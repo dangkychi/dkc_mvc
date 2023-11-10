@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4+VuaNsiqGvuSUQWiCfe+M/uMN1c9YIpwXlWgiMCfts=",
+  "Hash": "Uw0b138RR4Ksz7cBIVCOfPk0GJOX/hqStdt6Qtwo9sk=",
   "Source": "DuHoc",
   "BasePath": "_content/DuHoc",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DuHoc.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\comment.styles.css",
+      "SourceId": "DuHoc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\",
+      "BasePath": "_content/DuHoc",
+      "RelativePath": "css/comment.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\comment.styles.css"
     },
     {
       "Identity": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\DuHoc.styles.css",

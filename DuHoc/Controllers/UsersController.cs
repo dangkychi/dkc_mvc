@@ -44,10 +44,6 @@ namespace DuHoc.Controllers
                 TempData["LoginError"] = "Invalid username or password";
                 return View();
             }
-            else
-            {
-                TempData["LoginSuccess"] = "User login successful";
-            }
 
             var claims = new List<Claim>
             {
@@ -111,6 +107,13 @@ namespace DuHoc.Controllers
                 await _context.SaveChangesAsync();
                 TempData["RegisterSuccess"] = "Register successful";
 
+                Profile userProfile = new Profile
+                {
+                    user_id = user.user_id
+                };
+                _context.Add(userProfile);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction("Login");
             }
             return View();
@@ -160,6 +163,14 @@ namespace DuHoc.Controllers
             {
                 _context.Add(user);
                 await _context.SaveChangesAsync();
+
+                Profile userProfile = new Profile
+                {
+                    user_id = user.user_id
+                };
+                _context.Add(userProfile);
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -222,7 +233,7 @@ namespace DuHoc.Controllers
             if (id == null || _context.User == null)
             {
                 return NotFound();
-            }
+            }   
 
             var user = await _context.User
                 .FirstOrDefaultAsync(m => m.user_id == id);

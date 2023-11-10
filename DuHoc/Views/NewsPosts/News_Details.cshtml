@@ -9,7 +9,11 @@
             <img src="~/images/@Model.Images" class="img-fluid" alt="News Image" />
             <p></p>
             <p>@Html.Raw(Model.Content)</p>
+            <p class="text-muted">Create by: @Model.UserPosted</p>
+        </div>
+        <div class="col-md-4">
+            <partial name="~/Views/Shared/_PartialCountry.cshtml" />
         </div>
     </div>
-    <p class="text-muted">Create by: @Model.UserPosted</p>
+    
 </div>

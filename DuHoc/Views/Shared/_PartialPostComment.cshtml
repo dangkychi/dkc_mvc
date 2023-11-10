@@ -1,0 +1,22 @@
+﻿<!-- Add Review -->
+
+        <div class="col-lg-6 add_review_col">
+
+            <div class="add_review">
+                <form id="review_form" asp-controller="ParentComments" asp-action="Post">
+                    <div>
+                        <input name="user_id" value="" type="hidden" />
+                    </div>
+                    <div>
+                        <input name="Comment_Date" value="" type="hidden" />
+                    </div>
+                    <div>
+                        <textarea id="review_message" class="input_review" name="Text" placeholder="Your Review" rows="4" required data-error="Nhập bình luận của bạn!"></textarea>
+                    </div>
+                    <div class="text-left text-sm-right">
+                <button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Post">Gửi</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>

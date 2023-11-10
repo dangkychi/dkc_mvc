@@ -4,7 +4,6 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
 }
 
 .header {
@@ -13,7 +12,6 @@ body {
 
 .footer {
     position: absolute;
-    bottom: 0;
     width: 100%;
 }
 

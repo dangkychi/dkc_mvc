@@ -32,11 +32,13 @@ namespace DuHoc.Controllers
         }
 
         // GET: NewsPosts/News
-        public async Task<IActionResult> News(int newsPage = 1)
-        {        
+        public IActionResult News(int newsPage = 1)
+        {
             return View(new NewsListViewModel
             {
-                NewsPosts = _context.NewsPost.Skip((newsPage - 1) * PageSize).Take(PageSize),
+                Users = _context.User,
+                ParentComments = _context.ParentComment.OrderByDescending(y => y.ParentComment_Id),
+                NewsPosts = _context.NewsPost.OrderByDescending(y => y.News_Id).Skip((newsPage - 1) * PageSize).Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     ItemsPerPage= PageSize,

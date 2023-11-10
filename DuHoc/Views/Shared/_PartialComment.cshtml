@@ -1,0 +1,107 @@
+﻿@*@model IEnumerable<DuHoc.Models.ParentComment>*@
+@using DuHoc.Models.ViewModels;
+@model NewsListViewModel
+<link rel="stylesheet" href="~/css/comment.styles.css" asp-append-version="true" />
+
+@functions {
+    public int CountofComment { get; set; } = 5;
+}
+
+<div id="tab_3" class="tab_container">
+    <div class="row">
+        <!-- User Reviews -->
+
+        <div class="col-lg-6 reviews_col">
+            <div class="tab_title reviews_title">
+                <h4>Bình luận</h4>
+            </div>
+            <div>
+
+            </div>
+            <!-- User Review -->
+            @foreach (var item in Model.ParentComments)
+            {
+                <div class="user_review_container d-flex flex-column flex-sm-row">
+                    <div class="user">
+                        <div class="user_pic"></div>                                        
+                    </div>
+                    <div class="review">
+                        <div class="user_name">
+                            <div>@Html.DisplayFor(modelItem => item.User.user_name)</div>                            
+                            <p style="font-size:x-small" class="review_date">@Html.DisplayFor(modelItem => item.Comment_Date)</p>
+                        </div>
+                        <p>@Html.DisplayFor(modelItem => item.Text)</p>
+                        <div>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                var currentName = User.Identity.Name;
+                                var user = Model.Users.SingleOrDefault(u => u.user_name == currentName);
+                                var currentId = user.user_id;
+                                @if (currentId == item.user_id)
+                                {
+                                    <a style="text-decoration: none" asp-controller="ParentComments" asp-action="Delete" asp-route-id="@item.ParentComment_Id">Xóa</a>
+                                }
+                            }
+                            <a style="text-decoration: none" asp-controller="ParentComments" asp-action="Reply" asp-route-id="@item.ParentComment_Id">Trả lời</a>
+                        </div>
+
+                    </div>
+                </div>
+                <hr />
+            }  
+            @*<div id="showMoreLess">
+                @if (Model.ParentComments.Count() > 5)
+                {
+                    <a style="text-decoration:none" href="javascript:void(0);" id="showMoreBtn" onclick="toggleComments()">
+                        @if (Model.ShowAllComments == false)
+                        {
+                            <div>Ẩn bớt</div>
+                        }
+                        @if (Model.ShowAllComments == true)
+                        {
+                            <div>Hiện thêm</div>
+                        }
+                        
+                    </a>
+                }
+            </div>*@
+        </div>
+        <partial name="~/Views/Shared/_PartialPostComment.cshtml" />
+
+    </div>
+</div>
+
+<script>
+    var CountofComment = @CountofComment;
+
+    function updateCommentCount(increment) {
+        CountofComment += increment;
+        DotNet.invokeMethodAsync('DuHoc', 'UpdateCommentCount', CountofComment);
+    }
+
+    function toggleComments() {
+        var showAll = !@Model.ShowAllComments;
+        var showMoreBtn = document.getElementById('showMoreBtn');
+        showMoreBtn.innerText = showAll ? 'Show Less' : 'Show More';
+
+        if (showAll) {
+            updateCommentCount(5);
+        } else {
+            updateCommentCount(-5);
+        }
+
+        DotNet.invokeMethodAsync('DuHoc', 'UpdateShowAllComments', showAll);
+    }
+</script>
+
+
+@*<script>
+    function toggleComments() {
+        var showAll = !@Model.ShowAllComments;
+        var showMoreBtn = document.getElementById('showMoreBtn');
+        showMoreBtn.innerText = showAll ? 'Show Less' : 'Show More';
+
+        DotNet.invokeMethodAsync('DuHoc', 'UpdateShowAllComments', showAll);
+    }
+</script>
+*@

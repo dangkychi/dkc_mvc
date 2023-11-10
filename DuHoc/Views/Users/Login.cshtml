@@ -12,10 +12,9 @@
             </div>
           
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                @if (TempData.ContainsKey("LoginSuccess"))
-                {
-                    <div class="alert alert-success">@TempData["LoginSuccess"]</div>
-                }
+                <div class="form-outline mb-4">
+                    <h2>ĐĂNG NHẬP</h2>
+                </div>
                 @if (TempData.ContainsKey("LoginError"))
                 {
                     <div class="alert alert-danger">@TempData["LoginError"]</div>

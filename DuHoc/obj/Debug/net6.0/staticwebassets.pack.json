@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\DuHoc.styles.css"
     },
     {
+      "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\comment.styles.css",
+      "PackagePath": "staticwebassets\\css\\comment.styles.css"
+    },
+    {
       "Id": "D:\\forproject\\DAPM\\LyThuyet\\TUVANDUHOC\\DuHoc\\DuHoc\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

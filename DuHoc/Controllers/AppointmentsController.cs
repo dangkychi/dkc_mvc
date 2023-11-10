@@ -37,7 +37,7 @@ namespace DuHoc.Controllers
         public async Task<IActionResult> Appointment()
         {
             var duHocContext = _context.Appointment.Include(a => a.User);
-            return View(await duHocContext.ToListAsync());
+            return View(await duHocContext.OrderByDescending(y=>y.Appointment_Id).ToListAsync());
         }
 
         //Handle Status

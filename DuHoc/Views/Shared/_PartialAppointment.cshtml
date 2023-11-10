@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DuHoc.Models.Appointment>
+<style>
+    ul {
+        list-style: none;
+    }
+</style>
+<h3>Lịch đã đặt</h3>
+@foreach (var item in Model.Where(a => a.User.user_name == User.Identity.Name))
+{
+    <ul>
+        <li>
+            Ngày hẹn: @Html.DisplayFor(modelItem => item.Appointment_Date)
+        </li>
+        <li>
+            Chủ đề: @Html.DisplayFor(modelItem => item.Title)
+        </li>
+        <li>
+            Mô tả: @Html.DisplayFor(modelItem => item.Decription)
+        </li>
+        <li>
+            Ngày đặt: @Html.DisplayFor(modelItem => item.Create_At)
+        </li>
+        <li>
+            Trạng thái:
+            @if (item.Status == 0)
+            {
+                <span>Unconfirmed</span>
+            }
+            else if (item.Status == 1)
+            {
+                <span>Confirmed</span>
+            }
+            else if (item.Status == 2)
+            {
+                <span>Successful</span>
+            }
+            else if (item.Status == 3)
+            {
+                <span>Cancelled</span>
+            }
+        </li>
+    </ul>
+    <hr />
+}

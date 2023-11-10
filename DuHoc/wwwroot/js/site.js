@@ -18,3 +18,12 @@ $(document).ready(function () {
     updateFooterHeight();
     $(window).resize(updateFooterHeight);
 });
+
+/*window.UpdateShowAllComments = (showAll) => {
+    // Gọi phương thức C# để cập nhật trạng thái
+    DotNet.invokeMethodAsync('DuHoc', 'UpdateShowAllComments', showAll);
+};*/
+
+window.UpdateCommentCount = (count) => {
+    CountofComment = count;
+};

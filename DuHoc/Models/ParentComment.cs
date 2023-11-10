@@ -12,5 +12,6 @@ namespace DuHoc.Models
 
         public int user_id { get; set; }
         public User User { get; set; }
+        public ICollection<ChildComment> ChildComments { get; set; }
     }
 }

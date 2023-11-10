@@ -22,7 +22,7 @@ namespace DuHoc.Models
                 {
                     user_name = "Lakaka",
                     password = "password",
-                    user_role = "normal"
+                    user_role = "user"
                 };
 
                 context.SaveChanges();

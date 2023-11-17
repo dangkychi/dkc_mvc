@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<DuHoc.Models.University>
 
 <div class="container">
-    <h2 class="title" >
-        Các Trường Đại học bạn có thể theo dõi
-    </h2>
-
+    <div class="row justify-content-center">
+        <h2 class="title">
+            Các Trường Đại học bạn có thể theo dõi
+        </h2>
+    </div>
+    
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="row mt-5 row-cols-lg-3 g-lg-5 g-4 row-cols-md-3 row-cols-2 justify-content-center">
@@ -20,7 +22,7 @@
                                     <div class="title">
                                         @Html.DisplayFor(modelItem => item.Name)
                                     </div>
-                                    <div class="title">
+                                    <div class="title" style="font-size:medium">
                                         Địa điểm: @Html.DisplayFor(modelItem => item.Location)
                                     </div>
                                 </div>

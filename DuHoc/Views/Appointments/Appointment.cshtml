@@ -8,12 +8,12 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <a asp-action="Appointment_Create">ĐẶT LỊCH TƯ VẤN NGAY</a>
+    <a asp-action="Appointment_Create" class="btn btn-sm btn btn-primary">ĐẶT LỊCH TƯ VẤN NGAY</a>
 
     <partial name="~/Views/Shared/_PartialAppointment.cshtml" />
 }
 else
 {
-    <p>You need to log in to use this service!</p>
+    <p>Bạn cần đăng nhập để sử dụng chức năng này!</p>
 }
 

@@ -9,10 +9,10 @@
     <p></p>
 
     <form asp-controller="Universities" asp-action="University" method="get">
-        <p>
-            Tìm kiếm: <input type="text" name="SearchString" placeholder="Nhập từ khóa, trường học, khóa học..." />
+        <div class="nav-item nav-search d-none d-lg-block">
+            Tìm kiếm: <input type="text" id="navbar-search-input" name="SearchString" placeholder="Nhập từ khóa, trường học,..." />
             <input type="submit" value="Tìm kiếm" />
-        </p>
+        </div>
     </form>
 
     <!-- List of Countries -->

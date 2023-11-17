@@ -7,7 +7,6 @@ body {
 }
 
 .header {
-    background-color: #222831;
 }
 
 .footer {
@@ -17,14 +16,21 @@ body {
 
 
 .navbar .container-fluid {
-    background-color: #222831;
+    color: #0766AD;
     position: relative;
-    opacity: 0.4;
 }
 
-    .navbar .container-fluid .nav-link:hover {
-        color: #3A9D9B;
+    .navbar .container-fluid .nav-link {
+        border-bottom: 3px solid transparent;
     }
+
+        .navbar .container-fluid .nav-link:hover {
+            border-bottom: 3px solid #1640D6;
+            color: #1640D6;
+        }
+        .navbar .container-fluid .nav-link.active {
+            border-bottom: 3px solid #1640D6;
+        }
 
 .footer__wrapper {
     background-color: #111010;

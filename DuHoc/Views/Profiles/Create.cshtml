@@ -6,55 +6,80 @@
 @{
     Layout = "_Layout_Admin";
 }
+@section naviheader{
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-area="" asp-controller="Home" asp-action="Admin" class="nav-link">Trang Chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-area="" asp-controller="Profiles" asp-action="Index" class="nav-link">Danh Sách Người Dùng</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Thêm Mới </a>
+        </li>
+    </ul>
+}
 
-<h1>Create</h1>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h1>Create</h1>
 
-<h4>Profile</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="user_id" class="control-label"></label>
-                <select asp-for="user_id" class ="form-control" asp-items="ViewBag.user_id"></select>
+            <h4>Profile</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="user_id" class="control-label"></label>
+                            <select asp-for="user_id" class="form-control" asp-items="ViewBag.user_id"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="full_name" class="control-label"></label>
+                            <input asp-for="full_name" class="form-control" />
+                            <span asp-validation-for="full_name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="birthdate" class="control-label"></label>
+                            <input asp-for="birthdate" class="form-control" />
+                            <span asp-validation-for="birthdate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="phone_number" class="control-label"></label>
+                            <input asp-for="phone_number" class="form-control" />
+                            <span asp-validation-for="phone_number" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="email" class="control-label"></label>
+                            <input asp-for="email" class="form-control" />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="address" class="control-label"></label>
+                            <input asp-for="address" class="form-control" />
+                            <span asp-validation-for="address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="full_name" class="control-label"></label>
-                <input asp-for="full_name" class="form-control" />
-                <span asp-validation-for="full_name" class="text-danger"></span>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
             </div>
-            <div class="form-group">
-                <label asp-for="birthdate" class="control-label"></label>
-                <input asp-for="birthdate" class="form-control" />
-                <span asp-validation-for="birthdate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="phone_number" class="control-label"></label>
-                <input asp-for="phone_number" class="form-control" />
-                <span asp-validation-for="phone_number" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="address" class="control-label"></label>
-                <input asp-for="address" class="form-control" />
-                <span asp-validation-for="address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

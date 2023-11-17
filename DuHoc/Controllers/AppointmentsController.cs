@@ -118,6 +118,7 @@ namespace DuHoc.Controllers
             {
                 var currentId = user.user_id;
                 appointment.user_id = currentId;
+                appointment.Status = 1;
 
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();

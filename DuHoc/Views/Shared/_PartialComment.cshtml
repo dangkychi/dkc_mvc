@@ -27,7 +27,7 @@
                     </div>
                     <div class="review">
                         <div class="user_name">
-                            <div>@Html.DisplayFor(modelItem => item.User.user_name)</div>                            
+                            <div>@Html.DisplayFor(modelItem => item.user_name)</div>                            
                             <p style="font-size:x-small" class="review_date">@Html.DisplayFor(modelItem => item.Comment_Date)</p>
                         </div>
                         <p>@Html.DisplayFor(modelItem => item.Text)</p>
@@ -39,32 +39,36 @@
                                 var currentId = user.user_id;
                                 @if (currentId == item.user_id)
                                 {
-                                    <a style="text-decoration: none" asp-controller="ParentComments" asp-action="Delete" asp-route-id="@item.ParentComment_Id">Xóa</a>
+                                    <form asp-controller="ParentComments"  asp-action="Delete_Comment" asp-route-id="@item.ParentComment_Id">
+                                        <input type="hidden" asp-for="@item.ParentComment_Id" />
+                                        <input type="submit" value="Xóa" class="btn btn-danger" />
+                                    </form>                                   
                                 }
+                                <a style="text-decoration: none" asp-controller="ParentComments" asp-action="Reply" asp-route-id="@item.ParentComment_Id">Trả lời</a>
                             }
-                            <a style="text-decoration: none" asp-controller="ParentComments" asp-action="Reply" asp-route-id="@item.ParentComment_Id">Trả lời</a>
+                            
                         </div>
 
                     </div>
                 </div>
                 <hr />
             }  
-            @*<div id="showMoreLess">
+            <div id="showMoreLess">
                 @if (Model.ParentComments.Count() > 5)
                 {
                     <a style="text-decoration:none" href="javascript:void(0);" id="showMoreBtn" onclick="toggleComments()">
-                        @if (Model.ShowAllComments == false)
+                        @if (Model.ShowAllComments == true)
                         {
                             <div>Ẩn bớt</div>
                         }
-                        @if (Model.ShowAllComments == true)
+                        @if (Model.ShowAllComments == false)
                         {
                             <div>Hiện thêm</div>
                         }
                         
                     </a>
                 }
-            </div>*@
+            </div>
         </div>
         <partial name="~/Views/Shared/_PartialPostComment.cshtml" />
 
@@ -72,6 +76,8 @@
 </div>
 
 <script>
+
+
     var CountofComment = @CountofComment;
 
     function updateCommentCount(increment) {
@@ -92,16 +98,6 @@
 
         DotNet.invokeMethodAsync('DuHoc', 'UpdateShowAllComments', showAll);
     }
+
+    
 </script>
-
-
-@*<script>
-    function toggleComments() {
-        var showAll = !@Model.ShowAllComments;
-        var showMoreBtn = document.getElementById('showMoreBtn');
-        showMoreBtn.innerText = showAll ? 'Show Less' : 'Show More';
-
-        DotNet.invokeMethodAsync('DuHoc', 'UpdateShowAllComments', showAll);
-    }
-</script>
-*@

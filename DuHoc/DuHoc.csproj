@@ -7,6 +7,13 @@
 
   <ItemGroup>
     <None Remove="Controllers\ept1kegd.seb~" />
+    <None Remove="Controllers\hmwafix4.13z~" />
+    <None Remove="Controllers\oipd31zs.3jz~" />
+    <None Remove="Controllers\xeuyquyb.k1x~" />
+    <None Remove="Views\ParentComments\45ojonoj.iiv~" />
+    <None Remove="Views\Profiles\23lbtnxg.nhv~" />
+    <None Remove="Views\Shared\yepj3o3o.uss~" />
+    <None Remove="Views\Shared\_Layout_Admin.cshtml~RF4a5897.TMP" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,15 +21,43 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\maps\vertical-layout-light\style.css.map" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-Bold.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-ExtraBold.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-ExtraLight.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-Light.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-Medium.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-Regular.woff2" />
+    <None Include="wwwroot\fonts\Manrope\Manrope-SemiBold.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-Black.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-Bold.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-ExtraBold.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-ExtraLight.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-Italic.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-Light.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-Regular.woff2" />
+    <None Include="wwwroot\fonts\Nunito\Nunito-SemiBold.woff2" />
+    <None Include="wwwroot\fonts\Roboto\Roboto-Black.woff2" />
+    <None Include="wwwroot\fonts\Roboto\Roboto-Bold.woff2" />
+    <None Include="wwwroot\fonts\Roboto\Roboto-Light.woff2" />
+    <None Include="wwwroot\fonts\Roboto\Roboto-Medium.woff2" />
+    <None Include="wwwroot\fonts\Roboto\Roboto-Regular.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.54" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

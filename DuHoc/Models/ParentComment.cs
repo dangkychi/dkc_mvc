@@ -7,6 +7,7 @@ namespace DuHoc.Models
     public class ParentComment
     {
         public int ParentComment_Id { get; set; }
+        public string user_name { get; set; }
         public string Text { get; set; }
         public DateTime Comment_Date { get; set; }
 

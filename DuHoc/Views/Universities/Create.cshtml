@@ -6,55 +6,79 @@
 @{
     Layout = "_Layout_Admin";
 }
+@section naviheader{
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-area="" asp-controller="Home" asp-action="Admin" class="nav-link">Trang Chủ</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a asp-area="" asp-controller="Universities" asp-action="Index" class="nav-link">Danh Sách Đại học</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Thêm Mới </a>
+        </li>
+    </ul>
+}
 
-<h1>Create</h1>
 
-<h4>University</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Decription" class="control-label"></label>
-                <textarea asp-for="Decription" class="form-control tinymce"></textarea>
-                <span asp-validation-for="Decription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TuitionFee" class="control-label"></label>
-                <input asp-for="TuitionFee" class="form-control" />
-                <span asp-validation-for="TuitionFee" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Images" class="control-label"></label>
-                <input type="file" asp-for="Images" class="form-control" />
-                <span asp-validation-for="Images" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label">Country</label>
-                <select asp-for="Id" asp-items="ViewBag.Countries" class="form-control"></select>
-                <span asp-validation-for="Id" class="text-danger"></span>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h1>Create</h1>
+
+            <h4>University</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Decription" class="control-label"></label>
+                            <textarea asp-for="Decription" class="form-control tinymce"></textarea>
+                            <span asp-validation-for="Decription" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TuitionFee" class="control-label"></label>
+                            <input asp-for="TuitionFee" class="form-control" />
+                            <span asp-validation-for="TuitionFee" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Location" class="control-label"></label>
+                            <input asp-for="Location" class="form-control" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Images" class="control-label"></label>
+                            <input type="file" asp-for="Images" class="form-control" />
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Id" class="control-label">Country</label>
+                            <select asp-for="Id" asp-items="ViewBag.Countries" class="form-control"></select>
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div>
+                <a asp-action="Index">Back to List</a>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 <script>
@@ -83,5 +107,7 @@
 </script>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

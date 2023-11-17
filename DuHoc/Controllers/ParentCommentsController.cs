@@ -9,6 +9,7 @@ using DuHoc.Data;
 using DuHoc.Models;
 using DuHoc.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using NuGet.Protocol.Plugins;
 
 namespace DuHoc.Controllers
 {
@@ -22,6 +23,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: ParentComments
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
             var duHocContext = _context.ParentComment.Include(p => p.User);
@@ -29,6 +31,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: ParentComments/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.ParentComment == null)
@@ -48,6 +51,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: ParentComments/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             ViewData["user_id"] = new SelectList(_context.User, "user_id", "user_id");
@@ -59,7 +63,8 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ParentComment_Id,Text,Comment_Date,user_id")] ParentComment parentComment)
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Create([Bind("ParentComment_Id,Text,user_name,Comment_Date,user_id")] ParentComment parentComment)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +77,49 @@ namespace DuHoc.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Post(string Text,NewsListViewModel model)
+        public async Task<IActionResult> Post(string Text, NewsListViewModel model)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                if (ModelState.IsValid)
+                {
+                    var currentName = User.Identity.Name;
+                    var user = _context.User.SingleOrDefault(u => u.user_name == currentName);
+
+
+                    if (user != null)
+                    {
+                        var parentComment = new ParentComment
+                        {
+                            user_id = user.user_id,
+                            user_name = currentName,
+                            Comment_Date = DateTime.Now,
+                            Text = Text
+                        };
+
+                        _context.ParentComment.Add(parentComment);
+                        await _context.SaveChangesAsync();
+
+                        return RedirectToAction("News", "NewsPosts");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Bạn cần đăng nhập để có thể bình luận.");
+                    }
+
+                }
+            }
+            if (!User.Identity.IsAuthenticated)
+            {
+                TempData["CommentError"] = "Bạn cần đăng nhập để bình luận";
+                return RedirectToAction("News", "NewsPosts");
+            }
+            return View();
+        }
+
+        /*[HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Post(string Text)
         {
             if (ModelState.IsValid)
             {
@@ -89,20 +136,58 @@ namespace DuHoc.Controllers
                     };
 
                     _context.ParentComment.Add(parentComment);
-                    await _context.SaveChangesAsync();
+                    _context.SaveChangesAsync();
 
-                    return RedirectToAction("News", "NewsPosts");
+                    return Ok();
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Bạn cần đăng nhập để có thể bình luận.");
                 }
             }
-            return View();
+            return Ok();
+        }*/
+
+        public async Task<IActionResult> Delete_Comment(int? id)
+        {
+            if (id == null || _context.ParentComment == null)
+            {
+                return NotFound();
+            }
+
+            var parentComment = await _context.ParentComment
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(m => m.ParentComment_Id == id);
+            if (parentComment == null)
+            {
+                return NotFound();
+            }
+
+            return View(parentComment);
+        }
+
+        // POST: ParentComments/Delete/5
+        [HttpPost, ActionName("Delete_Comment")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed_Comment(int id)
+        {
+            if (_context.ParentComment == null)
+            {
+                return Problem("Entity set 'DuHocContext.ParentComment'  is null.");
+            }
+            var parentComment = await _context.ParentComment.FindAsync(id);
+            if (parentComment != null)
+            {
+                _context.ParentComment.Remove(parentComment);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("News", "NewsPosts");
         }
 
 
         // GET: ParentComments/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.ParentComment == null)
@@ -124,7 +209,8 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ParentComment_Id,Text,Comment_Date,user_id")] ParentComment parentComment)
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Edit(int id, [Bind("ParentComment_Id,Text,user_name,Comment_Date,user_id")] ParentComment parentComment)
         {
             if (id != parentComment.ParentComment_Id)
             {
@@ -156,6 +242,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: ParentComments/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.ParentComment == null)
@@ -177,6 +264,7 @@ namespace DuHoc.Controllers
         // POST: ParentComments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.ParentComment == null)

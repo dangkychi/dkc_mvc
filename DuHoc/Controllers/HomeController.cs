@@ -1,7 +1,9 @@
 ﻿using DuHoc.Data;
 using DuHoc.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DuHoc.Controllers
 {
@@ -21,6 +23,12 @@ namespace DuHoc.Controllers
         {
             var countries = _context.Country.ToList();
             return View(countries);
+        }
+
+        [Authorize(Roles = "admin")]
+        public IActionResult Admin()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using DuHoc.Data;
 using DuHoc.Models;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using System.Data;
 
 namespace DuHoc.Controllers
 {
@@ -23,6 +25,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Users
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Index()
         {
               return View(await _context.User.ToListAsync());
@@ -41,7 +44,7 @@ namespace DuHoc.Controllers
 
             if (user == null)
             {
-                TempData["LoginError"] = "Invalid username or password";
+                TempData["LoginError"] = "Tài khoản hoặc mật khẩu không chính xác";
                 return View();
             }
 
@@ -129,6 +132,7 @@ namespace DuHoc.Controllers
 
 
         // GET: Users/Details/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.User == null)
@@ -147,6 +151,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Users/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
@@ -157,6 +162,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create([Bind("user_id,user_name,password,user_role")] User user)
         {
             if (ModelState.IsValid)
@@ -177,6 +183,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Users/Edit/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.User == null)
@@ -197,6 +204,7 @@ namespace DuHoc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Edit(int id, [Bind("user_id,user_name,password,user_role")] User user)
         {
             if (id != user.user_id)
@@ -228,6 +236,7 @@ namespace DuHoc.Controllers
         }
 
         // GET: Users/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.User == null)
@@ -248,6 +257,7 @@ namespace DuHoc.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.User == null)
